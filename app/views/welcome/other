@@ -1,0 +1,41 @@
+<!-- <#% Mp3.all.each do |mp3| %> -->
+<div class="audio-div audio-<%= Mp3.first.id %>">
+  <div class="col-xs-3 text-center">
+    <h5><%= Mp3.first.title %></h5>
+  </div>
+  <div class="col-xs-9">
+    <audio class='audio-control' controls>
+        <source class='audio-source' id="<%= Mp3.first.id %>" src="<%= Mp3.first.audio_file %>" type="<%= Mp3.first.audio_file_content_type %>">
+    </audio>
+  </div>
+</div>
+<div class="audio-div audio-<%= Mp3.second.id %>">
+  <div class="col-xs-3 text-center">
+    <h5><%= Mp3.second.title %></h5>
+  </div>
+  <div class="col-xs-9">
+    <audio class='audio-control' controls>
+        <source class='audio-source' id="<%= Mp3.second.id %>" src="<%= Mp3.second.audio_file %>" type="<%= Mp3.second.audio_file_content_type %>">
+    </audio>
+  </div>
+</div>
+<div class="audio-div audio-<%= Mp3.third.id %>">
+  <div class="col-xs-3 text-center">
+    <h5><%= Mp3.third.title %></h5>
+  </div>
+  <div class="col-xs-9">
+    <audio class='audio-control' controls>
+        <source class='audio-source' id="<%= Mp3.third.id %>" src="<%= Mp3.third.audio_file %>" type="<%= Mp3.third.audio_file_content_type %>">
+    </audio>
+  </div>
+</div>
+<div class="audio-div audio-<%= Mp3.fourth.id %>">
+  <div class="col-xs-3 text-center">
+    <h5><%= Mp3.fourth.title %></h5>
+  </div>
+  <div class="col-xs-9">
+    <audio class='audio-control' controls>
+        <source class='audio-source' id="<%= Mp3.fourth.id %>" src="<%= Mp3.fourth.audio_file %>" type="<%= Mp3.fourth.audio_file_content_type %>">
+    </audio>
+  </div>
+</div>
