@@ -80,9 +80,9 @@ Rails.application.configure do
   config.paperclip_defaults = {
     :storage => :s3,
     :s3_credentials => {
-      :bucket => 'not-too-late.rocks',
-      :access_key_id => 'AKIAJQUG3CV2L2GLTZMA',
-      :secret_access_key => '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'
+      :bucket => ENV["AWS_BUCKET"],
+      :access_key_id => ENV["AWS_ACCESS_KEY"],
+      :secret_access_key => ENV["AWS_SECRET_KEY"]
       }
     }
 end
