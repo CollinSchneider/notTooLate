@@ -13,6 +13,8 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
         <ul class="nav navbar-nav right">
+          <li><a href="/shows">Upcoming Shows</a></li>
+          <li><a href="/about">About Us</a></li>
           <li><a href="/contact">Contact</a></li>
         </ul>
       </ul>
@@ -20,9 +22,12 @@
   </div><!-- /.container-fluid -->
 </nav>
 
-<audio id="player" class="audio_player col-xs-12" preload="auto" controls>
-  <source src="http://s3.amazonaws.com/not-too-late.rocks/mp3s/audio_files/000/000/003/original/03_Nowhere_Man.mp3?1475608427" type="audio/mp3" class='audio-file' style='width: 100%'>
-</audio>
+<div class="text-center">
+  <h5><span class='glyphicon glyphicon-music'></span> <span class='current-song'>Nowhere Man</span></h5>
+  <audio id="player" class="audio_player col-xs-12" preload="auto" controls>
+    <source src="http://s3.amazonaws.com/not-too-late.rocks/mp3s/audio_files/000/000/003/original/03_Nowhere_Man.mp3?1475608427" type="audio/mp3" class='audio-file' style='width: 100%'>
+  </audio>
+</div>
 
 <!-- <#%= form_for Mp3.new do |f| %>
   <#%= f.label "Title" %>
@@ -35,45 +40,16 @@
 <div class="container-fluid text-center">
 
   <% Mp3.all.each do |mp3| %>
-    <h4 class='pointer change-song' data='<%= mp3.title %>'><%= mp3.title %></h4>
+    <h6 class='pointer change-song' data='<%= mp3.title %>'><%= mp3.title %></h6>
   <% end %>
 
   <h4 class='slogan'>If you've always loved the great classic rock songs of the 60's and 70's, then this is the band to hear. Because it's "Not Too Late".</h4>
 
   <div class="row">
+    <h1>Not Too Late</h1>
     <div class="col-xs-12">
       <img src="/images/full-band.jpg" class='repsonsive-img img-rounded' />
     </div>
-    <h1>Not Too Late</h1>
-  </div>
-  <div class="row">
-    <div class="row col-xs-8 col-xs-offset-2">
-      <p>
-        Not Too Late is a rock & roll band of 6 seasoned musicians. Each member has extensive experience performing with a variety of bands or as individual performers over the last 25+ years..… but never together in the same band.
-      </p>
-      <p>
-        The original band concept was to tap into talented local musicians, each with a unique artistry, individual accomplishments and a repertoire of various musical offerings. This collaboration proved it was not too late to create a new group that was greater than the sum of its parts. The result is a band that can be enjoyed by a broad dance or club audience or be tailored to a smaller intimate venue.
-      </p>
-      <p>
-        After hearing Not Too Late perform Rick Tedesco, owner of The Guitar Hanger in Brookfield, CT said….
-        “I really enjoy the well played song choices and the harmonies. This is a fun band!”
-      </p>
-      <p>
-        Each band member comes from a different walk of life and has his own unique professional and social connections. This diversity of reach translates into an extensive fan base and followers from a large geographic area.
-      </p>
-      <p>
-        Not Too Late band members include:
-        Julio Aquila: Sax
-        Dennis MacDonald: Bass
-        Joseph Charles: Percussion
-        Larry Schneider: Vocals, Guitar
-        Chuck DelRossi: Vocals, Guitar
-        Jimmy Stack: Vocals
-      </p>
-    </div>
-  </div>
-  <div class="row col-xs-8 col-xs-offset-2">
-    <img src="/images/calendar.png" class='responsive-img'  />
   </div>
 
 </div>
@@ -86,19 +62,15 @@
     "Mr. Soul": "http://s3.amazonaws.com/not-too-late.rocks/mp3s/audio_files/000/000/005/original/Mr-Soul.mp3?1475608474",
     "Ziggy Stardust": "http://s3.amazonaws.com/not-too-late.rocks/mp3s/audio_files/000/000/006/original/Ziggy-Stardust.mp3?1475608499"
   }
-  // var songs = [
-  //   "http://s3.amazonaws.com/not-too-late.rocks/mp3s/audio_files/000/000/003/original/03_Nowhere_Man.mp3?1475608427",
-  //   "http://s3.amazonaws.com/not-too-late.rocks/mp3s/audio_files/000/000/004/original/Fire.mp3?1475608449",
-  //   "http://s3.amazonaws.com/not-too-late.rocks/mp3s/audio_files/000/000/005/original/Mr-Soul.mp3?1475608474",
-  //   "http://s3.amazonaws.com/not-too-late.rocks/mp3s/audio_files/000/000/006/original/Ziggy-Stardust.mp3?1475608499"
-  // ];
-
-  console.log(songs["Nowhere Man"]);
+  // $(document).ready(function(){
+    $('#player')[0].src = songs['Nowhere Man']
+  // })
 
   $('.change-song').click(function(){
     var title = $(this).attr('data')
     $('#player')[0].pause()
     $('#player')[0].src = songs[title]
     $('#player')[0].play()
+    $('.current-song').text(title)
   })
 </script>
