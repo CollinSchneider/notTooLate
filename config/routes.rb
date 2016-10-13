@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get 'contact' => 'welcome#contact'
   get 'about' => 'welcome#about'
   get 'shows' => 'welcome#shows'
+  get 'press' => 'welcome#press'
   resources :mp3s
 
   # Example of regular route:
